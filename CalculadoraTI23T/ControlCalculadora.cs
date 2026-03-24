@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,7 +38,11 @@ namespace CalculadoraTI23T
                    "7. Raiz Primeiro Numero\n" +
                    "8. Tabuada\n" +
                    "9. Ano Bissexto\n" +
-                   "10. Verificação de numero";
+                   "10. Verificação de numero\n" +
+                   "11. Verificação de Idade\n" +
+                   "12. Verificação de Intervalo\n" +
+                   "13. Verificação de lados\n" +
+                   "14. Dia da Semana";
         }//fim do método
 
         public void realizarOperacao()
@@ -108,6 +113,40 @@ namespace CalculadoraTI23T
                         int vNum = Convert.ToInt32(Console.ReadLine());
                         //Chamar o metodo do Verificar Numero
                         Console.WriteLine(this.model.verificarNum(vNum));
+                        break;
+                    case 11:
+                        Console.WriteLine("Informe uma idade para verificação");
+                        int Num = Convert.ToInt32(Console.ReadLine());
+                        //Chamar o metodo do Verificar Idade
+                        Console.WriteLine(this.model.verificarIdade(Num));
+                        break;
+                    case 12:
+                        Console.WriteLine("Informe o primeiro numero para intervalo");
+                        int Met1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe o Segundo numero para intervalo");
+                        int Met2 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe o primeiro numero para intervalo");
+                        int InNum = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe seu numero para intervalo");
+                        Console.WriteLine(this.model.verificarIntervalo(InNum, Met1, Met2));
+                        break;
+                    case 13:
+                        Console.WriteLine("Informe o primeiro lado");
+                        int lado1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe o Segundo lado");
+                        int lado2 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe o terceiro lado");
+                        int lado3 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.model.verificarTriangulo(lado1, lado2, lado3));
+                        break;
+                    case 14:
+                        Console.WriteLine("Informe o numero para o dia da semana");
+                        int dNum = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.model.diaSemana(dNum));
+                        break;
+                    case 15:
+                        Console.WriteLine("informe a senha");
+                        int senha == int com = conver
                         break;
                     default:
                         Console.WriteLine("Informe um valor entre 0 e 9");

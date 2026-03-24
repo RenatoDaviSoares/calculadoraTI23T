@@ -13,6 +13,14 @@ namespace CalculadoraTI23T
         private double num1;//Encapsular a variável
         private double num2;
         private double resultado;
+        private double Met1;
+        private double Met2;
+        private double lado1;
+        private double lado2;
+        private double lado3;
+        private double dNum;
+        private double senha;
+        private double comparar;
 
         //Método que instancia as variáveis = dá valores iniciais
         //2º Método construtor
@@ -148,6 +156,81 @@ namespace CalculadoraTI23T
             }
         }
 
+        public string verificarIdade(int Num)
+        {
+            if (Num >= 16)
+            {
+                return "Tem idade para votar";
+            }
+            else
+            {
+                return "NÃO tem idade para votar";
+            }
+        }
 
-    }//fim da classe Model
-}//fim do projetoCalculadoraTI23T
+        public string verificarIntervalo(int InNum, int Met1, int Met2)
+        {
+            if (InNum > Met1 && InNum <= Met2)
+            {
+                return $"O numero {InNum} está entre o intervalo";
+            }
+            else
+            {
+                return $"O numero {InNum} NÃO está no intervalo";
+            }
+        }
+
+        public string verificarTriangulo(int lado1, int lado2, int lado3)
+        {
+            if (lado1 == lado2 && lado2 == lado3 && lado1 == lado3)
+            {
+                return $"O seu Triangulo é equilatero";
+            }
+            else if (lado1 == lado2 && lado2 != lado3)
+            {
+                return $"o triangulo é isosceles";
+            }
+            else
+            {
+                return $"o triangulo é escaleno";
+            }
+        }
+       public string diaSemana(int dNum)
+       {
+            switch (dNum)
+            {
+                case 1:
+                    return "Segunda-Feira!";
+                case 2:
+                    return "Terça-Feira!";
+                case 3:
+                    return "Quarta-Feira!";
+                case 4:
+                    return "Quinta-Feira!";
+                case 5:
+                    return "Sexta-Feira!";
+                case 6:
+                    return "Sabado!";
+                case 7:
+                    return "Domingo!";
+                default:
+                    return "Informe um valor entre 1 e 7!";
+            }
+        }
+
+        public string senhaDigitada(int senha, int comp)
+        {
+            if (senha == comp)
+            {
+                return "senha aprovada";
+            }
+            else 
+            {
+                return "senha reprovada";
+            }
+        }
+
+    }
+
+   //fim da classe Mod
+} //fim do projetoCalculadoraTI23T
